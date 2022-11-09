@@ -1,0 +1,25 @@
+.post__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media(max-width: 414px){
+        &:first-of-type{
+            flex-direction: row;
+        };
+    }
+    &-text{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+        letter-spacing: 0.23619px;
+        color: #878D9D;
+    }
+    svg{
+        align-self: flex-end;
+        user-select: none;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}
