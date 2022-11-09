@@ -13,8 +13,8 @@ import {
 function App() {
   return (
     <Routes>
-      <Route path='https://sevazanosoff.github.io/testfelaab/' element={<Suspense fallback={<Loading />}><PostList /></Suspense>} />
-      <Route path='https://sevazanosoff.github.io/testfelaab/post/:id' element={<Suspense fallback={<Loading />}><PostFullPage /></Suspense>} />
+      <Route path='/' element={<Suspense fallback={<Loading />}><PostList /></Suspense>} />
+      <Route path='/post/:id' element={<Suspense fallback={<Loading />}><PostFullPage /></Suspense>} />
     </Routes>
   );
 }
