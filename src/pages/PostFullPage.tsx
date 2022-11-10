@@ -12,7 +12,6 @@ import { Posts } from '../types/Post/PostList'
 import styles from '../styles/FullPost/Fullpost.module.scss'
 
 const API_KEY = process.env.REACT_APP_API_KEY
-const ACESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN
 const PostFullPage = () => {
     const [posts, setPost] = React.useState<Posts[]>([])
     const [isLoading, setLoading] = React.useState(false)
@@ -41,7 +40,7 @@ const PostFullPage = () => {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get(`https://api.json-generator.com/templates/ZM1r0eic3XEy/data${ACESS_TOKEN}`)
+            const res = await axios.get(`https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu`)
             setPost(res.data)
         } catch (err) {
             console.warn(err)
