@@ -14,7 +14,7 @@ const Map: React.FC<MapProps> = ({ center }) => {
     const screenWidth = window.screen.width
     const containerStyle = {
         width: `${screenWidth > 414 ? "400px" : "370px"}`,
-        height: "240px",
+        height: "220px",
     };
 
     const defaultOptions = {

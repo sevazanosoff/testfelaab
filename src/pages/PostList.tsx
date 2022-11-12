@@ -22,7 +22,7 @@ const PostList: React.FC = () => {
     const [isLoading, setLoading] = React.useState(false)
     const [page, setPage] = React.useState<number>(1)
     // useState because of you can make filter functional like how much posts you wanna see on the page?
-    const [limit, setLimit] = React.useState<number>(5)
+    const [limit, setLimit] = React.useState<number>(2)
 
     const svgSelected = document.getElementsByClassName('post__item-selected')
     const svgRating: HTMLCollectionOf<Element> = document.getElementsByClassName('post__item-rating')
@@ -61,6 +61,7 @@ const PostList: React.FC = () => {
             opacity="0.6"
         />,
     ]
+
 
     const fetchData = async () => {
         try {
@@ -115,7 +116,7 @@ const PostList: React.FC = () => {
                     <p className={styles['post__error-text']}>К сожалению не удалось получить посты. Попробуйте повторить попытку позже.</p>
                 </div>
                 :
-                <div className={styles['post']}>
+                <section className={styles['post']}>
                     {currentPost.map((post, index) => (
                         <div className={styles['post__wrapper']} key={post.id}>
                             {screenWidth <= 414 &&
@@ -155,7 +156,7 @@ const PostList: React.FC = () => {
                         </div>
                     ))}
                     <Pagination page={page} totalPages={totalPages} changePage={(p: number) => setPage(p)} />
-                </div>
+                </section>
             }
         </>
     )
